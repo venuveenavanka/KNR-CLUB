@@ -1,0 +1,861 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karimnagar Club - Exclusive Luxury Club, Suites & Sports Arena</title>
+  <meta name="description" content="Experience premium luxury rooms, world-class sports facilities, and exclusive hospitality at Karimnagar Club. Book your stay today.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6.5.1 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Page Header Bar -->
+  <header class="top-navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" id="brandLogo">
+        <div class="logo-icon-wrapper">
+          <i class="fa-solid fa-crown logo-icon"></i>
+        </div>
+        <span class="logo-text">Karimnagar Club</span>
+      </a>
+
+
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#rooms" class="nav-link active" data-tab-nav="rooms">Rooms</a>
+        <a href="#sports" class="nav-link" data-tab-nav="sports">Sports</a>
+        <a href="#about" class="nav-link" data-tab-nav="about">About</a>
+      </nav>
+
+      <!-- Right Action Buttons -->
+      <div class="nav-right-actions">
+        <!-- Admin Dashboard Link -->
+        <a href="./CLUB ADMIN/index.html" class="admin-link-btn" title="Open Admin Dashboard">
+          <i class="fa-solid fa-user-shield"></i> Admin Portal
+        </a>
+
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Hero Card Container -->
+  <main class="main-hero-section" id="home">
+    <div class="hero-card-wrapper">
+
+
+
+      <!-- Hero Top Banner Info -->
+      <div class="hero-top-info">
+        <div class="hero-tag-badge">
+          <span class="dash">—</span>
+          <span class="tag-text">It's time to go 🚀</span>
+        </div>
+
+        <div class="booking-social-proof">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Member 1" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Member 2" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Member 3" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Member 4" class="avatar-img">
+            <span class="avatar-count-badge">+24</span>
+          </div>
+          <span class="proof-text"><strong>25 people</strong> booked a visit in last 24 hours</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="hero-headline-container">
+        <h1 class="hero-headline">
+          Don't just imagine it, make it<br class="desktop-br"> happen. <span class="highlight-word">Karimnagar Club</span>
+        </h1>
+      </div>
+
+      <!-- Floating Booking / Search Widget Card -->
+      <div class="search-widget-wrapper">
+        
+        <!-- Attached Navigation Tabs -->
+        <div class="search-main-tabs" role="tablist">
+          <button class="search-tab-btn active" data-tab="rooms" role="tab" aria-selected="true">
+            <i class="fa-solid fa-bed"></i> Rooms
+          </button>
+          <div class="tab-divider">|</div>
+          <button class="search-tab-btn" data-tab="sports" role="tab" aria-selected="false">
+            <i class="fa-solid fa-trophy"></i> Sports
+          </button>
+          <div class="tab-divider">|</div>
+          <button class="search-tab-btn" data-tab="about" role="tab" aria-selected="false">
+            <i class="fa-solid fa-circle-info"></i> About
+          </button>
+        </div>
+
+        <!-- Main Input White Box -->
+        <div class="search-box-card">
+          
+          <div class="sub-category-filters">
+            <button class="sub-filter-btn active" data-filter="all">All Categories</button>
+            <button class="sub-filter-btn" data-filter="vip">VIP Suites</button>
+            <button class="sub-filter-btn" data-filter="villas">Pool Villas</button>
+          </div>
+
+          <form class="search-form" id="searchForm" onsubmit="event.preventDefault();">
+            
+            <!-- 1. Location -->
+            <div class="input-group-col location-col" id="locationGroup">
+              <div class="input-icon">
+                <i class="fa-regular fa-paper-plane"></i>
+              </div>
+              <div class="input-content">
+                <label for="locationInput" class="input-label">Location</label>
+                <input type="text" id="locationInput" class="custom-text-input" readonly value="Karimnagar Club Royal Resort">
+              </div>
+            </div>
+
+            <div class="form-col-divider"></div>
+
+            <!-- 2. Check In -->
+            <div class="input-group-col date-col">
+              <div class="input-icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </div>
+              <div class="input-content">
+                <label for="checkInInput" class="input-label">Check in</label>
+                <input type="text" id="checkInInput" class="custom-text-input date-picker-trigger" placeholder="Add dates" readonly value="Oct 12, 2026">
+                <input type="date" id="nativeCheckIn" class="native-date-hidden">
+              </div>
+            </div>
+
+            <div class="form-col-divider"></div>
+
+            <!-- 3. Check Out -->
+            <div class="input-group-col date-col">
+              <div class="input-icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </div>
+              <div class="input-content">
+                <label for="checkOutInput" class="input-label">Check out</label>
+                <input type="text" id="checkOutInput" class="custom-text-input date-picker-trigger" placeholder="Add dates" readonly value="Oct 20, 2026">
+                <input type="date" id="nativeCheckOut" class="native-date-hidden">
+              </div>
+            </div>
+
+            <div class="form-col-divider"></div>
+
+            <!-- 4. Guests -->
+            <div class="input-group-col guests-col" id="guestsGroup">
+              <div class="input-icon">
+                <i class="fa-regular fa-user"></i>
+              </div>
+              <div class="input-content">
+                <label class="input-label">Guests</label>
+                <span class="guests-display-text" id="guestsDisplayText">2 Guests, 1 Room</span>
+              </div>
+              
+              <div class="guests-popup-card" id="guestsPopup">
+                <div class="guest-counter-row">
+                  <div class="counter-info">
+                    <span class="counter-title">Adults</span>
+                    <span class="counter-subtitle">Ages 13 or above</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button class="counter-btn" id="adultMinus" type="button"><i class="fa-solid fa-minus"></i></button>
+                    <span class="counter-value" id="adultCount">2</span>
+                    <button class="counter-btn" id="adultPlus" type="button"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+
+                <div class="guest-counter-row">
+                  <div class="counter-info">
+                    <span class="counter-title">Children</span>
+                    <span class="counter-subtitle">Ages 0 to 12</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button class="counter-btn" id="childMinus" type="button"><i class="fa-solid fa-minus"></i></button>
+                    <span class="counter-value" id="childCount">0</span>
+                    <button class="counter-btn" id="childPlus" type="button"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Submit Search Button -->
+            <div class="search-btn-col">
+              <button type="submit" class="primary-search-btn" id="searchSubmitBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Search</span>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Dynamic Content View Area -->
+  <div class="tab-content-wrapper">
+
+    <!-- ==========================================================================
+         TAB 1 CONTENT: ROOMS (Affordable 3,000 - 4,800 INR Pricing!)
+         ========================================================================== -->
+    <section class="tab-content-section active-section" id="section-rooms">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-bed"></i> Luxury Accommodations</div>
+          <h2 class="section-title">Karimnagar Club Rooms & Luxury Suites</h2>
+          <p class="section-subtitle">Affordable luxury starting from ₹3,200 to ₹4,800 per night with 24/7 club services.</p>
+        </div>
+
+        <div class="rooms-grid">
+          
+          <!-- Room Card 1 (Room #101) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="assets/room_presidential.png" alt="Presidential Ocean Suite" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Room #101</span>
+              <span class="room-badge popular-badge">Popular</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 4 Guests</span>
+              </div>
+              <h3 class="room-title">Presidential Suite</h3>
+              <p class="room-description">Floor-to-ceiling ocean view windows & spa bathroom.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-wifi"></i> Wi-Fi</span>
+                <span><i class="fa-solid fa-water"></i> Ocean View</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹4,500</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Room #101 - Presidential Suite', '₹4,500')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 2 (Villa #204) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="assets/room_villa.png" alt="Deluxe Private Pool Villa" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Villa #204</span>
+              <span class="room-badge luxury-badge">Pool Villa</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 6 Guests</span>
+              </div>
+              <h3 class="room-title">Deluxe Pool Villa</h3>
+              <p class="room-description">Private infinity pool, garden terrace & butler service.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-person-swimming"></i> Pool</span>
+                <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹4,800</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Villa #204 - Deluxe Pool Villa', '₹4,800')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 3 (Suite #305) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80" alt="Executive Golf Suite" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Suite #305</span>
+              <span class="room-badge view-badge">Golf View</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 2 Guests</span>
+              </div>
+              <h3 class="room-title">Executive Golf Suite</h3>
+              <p class="room-description">Overlooking championship golf course & private balcony.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-golf-ball-tee"></i> Golf</span>
+                <span><i class="fa-solid fa-martini-glass"></i> Lounge</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹3,800</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Suite #305 - Executive Golf Suite', '₹3,800')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 4 (Penthouse #501) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="assets/room_penthouse.png" alt="Royal Penthouse Suite" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Penthouse #501</span>
+              <span class="room-badge penthouse-badge">VIP Skybar</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 4 Guests</span>
+              </div>
+              <h3 class="room-title">Royal Penthouse</h3>
+              <p class="room-description">Top floor 360-degree panorama, private jacuzzi & bar.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-crown"></i> VIP Bar</span>
+                <span><i class="fa-solid fa-hot-tub-person"></i> Jacuzzi</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹4,900</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Penthouse #501 - Royal Penthouse', '₹4,900')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 5 (Cottage #108) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80" alt="Sunset Oceanfront Cottage" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Cottage #108</span>
+              <span class="room-badge view-badge">Sunset View</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 3 Guests</span>
+              </div>
+              <h3 class="room-title">Oceanfront Cottage</h3>
+              <p class="room-description">Direct beach access, private hammock deck & open rainfall shower.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-umbrella-beach"></i> Beach Access</span>
+                <span><i class="fa-solid fa-shower"></i> Rainfall</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹3,900</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Cottage #108 - Oceanfront Cottage', '₹3,900')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 6 (Chalet #112) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="assets/room_chalet.png" alt="Luxury Garden Chalet" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Chalet #112</span>
+              <span class="room-badge luxury-badge">Chalet</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 4 Guests</span>
+              </div>
+              <h3 class="room-title">Luxury Garden Chalet</h3>
+              <p class="room-description">Nestled in serene tropical gardens with sunbeds & private veranda.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-tree"></i> Flora Garden</span>
+                <span><i class="fa-solid fa-sun"></i> Sunbeds</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹3,500</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Chalet #112 - Garden Chalet', '₹3,500')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 7 (Room #105) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=80" alt="Premier Club Suite" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Room #105</span>
+              <span class="room-badge popular-badge">Best Value</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 2 Guests</span>
+              </div>
+              <h3 class="room-title">Premier Club Room</h3>
+              <p class="room-description">Sleek modern interior with king bed, smart TV & work desk.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+                <span><i class="fa-solid fa-laptop"></i> Work Desk</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹3,200</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Room #105 - Premier Club Room', '₹3,200')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 8 (Villa #208) -->
+          <div class="room-card">
+            <div class="room-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=80" alt="Horizon Sky Villa" class="room-img">
+              <span class="room-number-tag"><i class="fa-solid fa-door-closed"></i> Villa #208</span>
+              <span class="room-badge penthouse-badge">Ultra VIP</span>
+              <button class="wishlist-btn" title="Save"><i class="fa-regular fa-heart"></i></button>
+            </div>
+            <div class="room-content">
+              <div class="room-meta">
+                <span class="room-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                <span class="room-capacity"><i class="fa-solid fa-user-group"></i> 5 Guests</span>
+              </div>
+              <h3 class="room-title">Horizon Sky Villa</h3>
+              <p class="room-description">Glass floor infinity plunge pool overlooking sunset ocean horizon.</p>
+              <div class="room-amenities">
+                <span><i class="fa-solid fa-water"></i> Plunge Pool</span>
+                <span><i class="fa-solid fa-wine-glass"></i> VIP Lounge</span>
+              </div>
+              <div class="room-footer">
+                <div class="room-price-box">
+                  <span class="price-amount">₹4,600</span>
+                  <span class="price-period">/night</span>
+                </div>
+                <button class="book-now-btn" onclick="bookRoom('Villa #208 - Horizon Sky Villa', '₹4,600')">Book Now</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SPORTS -->
+    <section class="tab-content-section" id="section-sports">
+      <div class="section-container sports-section-bg">
+        <div class="section-header">
+          <div class="section-badge sports-badge"><i class="fa-solid fa-trophy"></i> World-Class Facilities</div>
+          <h2 class="section-title">Karimnagar Club Sports & Athletic Arena</h2>
+          <p class="section-subtitle">Explore 6 professional sporting facilities with certified trainers, night lighting, and tournament hosting.</p>
+        </div>
+
+        <div class="sports-grid">
+          
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="assets/sport_golf.png" alt="Golf Course" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-golf-ball-tee"></i> Golf & Country Club</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">18-Hole Championship Golf Course</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> Open Daily</span>
+              </div>
+              <p class="sport-description">PGA standard greens featuring scenic water hazards, practice range & pro shop.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> Night Lighting</span>
+                <span><i class="fa-solid fa-circle-check"></i> PGA Pro Trainers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="assets/sport_tennis.png" alt="Tennis Courts" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-baseball"></i> Racket Sports</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">Illuminated Tennis & Pickleball</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> Open Daily</span>
+              </div>
+              <p class="sport-description">Synthetic clay and hard courts equipped with LED floodlights & ball machines.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> 6 Clay Courts</span>
+                <span><i class="fa-solid fa-circle-check"></i> Pickleball Zone</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&auto=format&fit=crop&q=80" alt="Infinity Pool" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-person-swimming"></i> Aquatics</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">Infinity Olympic Lap Pool</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> Open Daily</span>
+              </div>
+              <p class="sport-description">Temperature-controlled 50-meter lap pool with poolside cabanas & aquatic lounge.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> Heated Pool</span>
+                <span><i class="fa-solid fa-circle-check"></i> Poolside Bar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=80" alt="Gym & Fitness" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-dumbbell"></i> Fitness & Health</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">Technogym & Glass Squash Court</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> 24/7 Access</span>
+              </div>
+              <p class="sport-description">Technogym smart equipment, glass squash courts, sauna & steam rooms.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> Smart Equipment</span>
+                <span><i class="fa-solid fa-circle-check"></i> Sauna & Steam</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="assets/sport_equestrian.png" alt="Equestrian Club" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-horse"></i> Equestrian Club</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">Thoroughbred Equestrian Arena</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> Open Daily</span>
+              </div>
+              <p class="sport-description">Professional riding arena, thoroughbred stables & certified equestrian trainers.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> Riding Track</span>
+                <span><i class="fa-solid fa-circle-check"></i> Stabling Care</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sport-card">
+            <div class="sport-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&auto=format&fit=crop&q=80" alt="Indoor Badminton Arena" class="sport-img">
+              <span class="sport-category-tag"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Indoor Sports</span>
+            </div>
+            <div class="sport-content">
+              <div class="sport-header-row">
+                <h3 class="sport-title">Indoor Badminton & Sports Complex</h3>
+                <span class="sport-status"><i class="fa-solid fa-circle-dot"></i> Open Daily</span>
+              </div>
+              <p class="sport-description">BWF-standard wooden flooring badminton courts, table tennis & basketball zone.</p>
+              <div class="sport-features-list">
+                <span><i class="fa-solid fa-circle-check"></i> Wooden Flooring</span>
+                <span><i class="fa-solid fa-circle-check"></i> Table Tennis</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: ABOUT -->
+    <section class="tab-content-section" id="section-about">
+      <div class="section-container">
+        
+        <div class="about-card-container">
+          <div class="about-grid">
+            
+            <div class="about-info-col">
+              <div class="section-badge"><i class="fa-solid fa-crown"></i> Who We Are</div>
+              <h2 class="about-heading">Welcome to Karimnagar Club</h2>
+              <p class="about-description">
+                Established as the pinnacle of luxury hospitality, sports, and recreation, <strong>Karimnagar Club</strong> has provided over 30 years of premier service to elite members seeking private oceanfront suites, fine dining, and international sports infrastructure.
+              </p>
+              
+              <div class="services-list-grid">
+                <div class="service-item">
+                  <div class="service-icon"><i class="fa-solid fa-concierge-bell"></i></div>
+                  <div class="service-text">
+                    <h4>24/7 Butler Service</h4>
+                    <p>Personalized assistance tailored to your every preference.</p>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
+                  <div class="service-text">
+                    <h4>Michelin Star Dining</h4>
+                    <p>Curated gourmet menus from international master chefs.</p>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
+                  <div class="service-text">
+                    <h4>Luxury Spa & Wellness</h4>
+                    <p>Hydrotherapy, massages & relaxation lounges.</p>
+                  </div>
+                </div>
+
+                <div class="service-item">
+                  <div class="service-icon"><i class="fa-solid fa-plane-up"></i></div>
+                  <div class="service-text">
+                    <h4>Private Heliport & Aviation</h4>
+                    <p>Direct private helicopter landing pad & VIP transport.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-contact-col">
+              <div class="address-card">
+                <h3 class="address-title"><i class="fa-solid fa-location-dot"></i> Location & Contact</h3>
+                <p class="address-text">
+                  Visit our flagship resort and experience the pinnacle of luxury sports and hospitality.
+                </p>
+
+                <div class="contact-details">
+                  <div class="contact-line">
+                    <i class="fa-solid fa-building"></i>
+                    <div>
+                      <strong>Address:</strong><br>
+                      Karimnagar Club Estate, 100 Royal Palm Avenue,<br>
+                      Jubilee Hills, Hyderabad, Telangana 500033
+                    </div>
+                  </div>
+
+                  <div class="contact-line">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                      <strong>Direct Hotline:</strong><br>
+                      +91 98765 43210 / +91 40 2345 6789
+                    </div>
+                  </div>
+
+                  <div class="contact-line">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                      <strong>Email Concierge:</strong><br>
+                      concierge@karimnagarclub.com
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#rooms" onclick="switchTab('rooms');" class="directions-btn">
+                  <i class="fa-solid fa-compass"></i> Reserve Suites Now
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="faq-container">
+          <h3 class="faq-section-title"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h3>
+          
+          <div class="faq-accordion">
+            <details class="faq-item">
+              <summary class="faq-question">How do I become a member of Karimnagar Club? <i class="fa-solid fa-chevron-down"></i></summary>
+              <div class="faq-answer">
+                Membership at Karimnagar Club is available via invitation or member referral. You can also submit an application via our concierge hotline or by visiting our administration office.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">What are the check-in and check-out times for suites? <i class="fa-solid fa-chevron-down"></i></summary>
+              <div class="faq-answer">
+                Standard check-in is at 2:00 PM and check-out is at 12:00 PM. VIP members enjoy complimentary early check-in and late check-out privileges based on availability.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">Are the sports facilities open to room guests? <i class="fa-solid fa-chevron-down"></i></summary>
+              <div class="faq-answer">
+                Yes! All suite and villa guests enjoy complimentary access to the Olympic lap pool, tennis courts, and gym during their stay. Golf green fees and equestrian lessons are available at member rates.
+              </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="#home" class="footer-logo">
+          <div class="logo-icon-wrapper">
+            <i class="fa-solid fa-crown logo-icon"></i>
+          </div>
+          <span class="logo-text">Karimnagar Club</span>
+        </a>
+        <p class="footer-tagline">
+          Don't just imagine luxury, experience it. The premiere destination for stays, sports, and fine living.
+        </p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="#" onclick="switchTab('rooms')"><i class="fa-solid fa-chevron-right"></i> Rooms & Suites</a></li>
+          <li><a href="#" onclick="switchTab('sports')"><i class="fa-solid fa-chevron-right"></i> Sports Arena</a></li>
+          <li><a href="#" onclick="switchTab('about')"><i class="fa-solid fa-chevron-right"></i> About Karimnagar Club</a></li>
+          <li><a href="./CLUB ADMIN/index.html"><i class="fa-solid fa-chevron-right"></i> Admin Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Club Amenities</h4>
+        <ul class="footer-links-list">
+          <li><a href="#" onclick="switchTab('sports')"><i class="fa-solid fa-chevron-right"></i> 18-Hole Golf Course</a></li>
+          <li><a href="#" onclick="switchTab('sports')"><i class="fa-solid fa-chevron-right"></i> Tennis & Pickleball</a></li>
+          <li><a href="#" onclick="switchTab('rooms')"><i class="fa-solid fa-chevron-right"></i> Private Pool Villas</a></li>
+          <li><a href="#" onclick="switchTab('about')"><i class="fa-solid fa-chevron-right"></i> Fine Dining</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">VIP Newsletter</h4>
+        <p class="newsletter-desc">Subscribe to receive exclusive club updates and room offers.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing to Karimnagar Club!');">
+          <input type="email" placeholder="Enter your email" required class="newsletter-input">
+          <button type="submit" class="newsletter-submit-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-container">
+        <p>&copy; 2026 Karimnagar Club. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Club Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <h3>Register Details</h3>
+      <form id="bookingForm" onsubmit="event.preventDefault(); submitBooking();" style="display: flex; flex-direction: column; gap: 10px;">
+        <input type="text" id="bName" placeholder="Name" required class="custom-text-input" style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <input type="text" id="bMobile" placeholder="Mobile Number" required class="custom-text-input" style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <input type="number" id="bRooms" placeholder="Number of Rooms" required class="custom-text-input" min="1" style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <input type="date" id="bDates" placeholder="Dates" required class="custom-text-input" style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <textarea id="bAddress" placeholder="Address" required class="custom-text-input" rows="3" style="padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;"></textarea>
+        <button type="submit" class="book-now-btn" style="width: 100%; margin-top: 10px; background: var(--color-brand-blue); color: #fff; padding: 12px; border: none; border-radius: 12px; cursor: pointer; font-weight: 700;">Save & Next</button>
+        <button type="button" class="close-modal-btn" onclick="closeModal('bookingModal')">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-card" style="padding: 0; max-width: 450px; overflow: hidden; border-radius: 12px; border: 1px solid #e2e8f0; margin: auto;">
+      <!-- Razorpay Header -->
+      <div style="background: #02042b; color: white; padding: 25px 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3 style="margin: 0; font-size: 1.3rem; color: #fff; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-crown" style="color: #3399cc;"></i> Karimnagar Club</h3>
+          <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">Test Business</p>
+        </div>
+        <div style="text-align: right;">
+          <p style="margin: 0; font-size: 0.85rem; opacity: 0.8;">Amount Payable</p>
+          <strong id="payAmount" style="font-size: 1.4rem;">₹0</strong>
+        </div>
+      </div>
+      <!-- Body -->
+      <div style="padding: 25px 20px;">
+        <h4 style="margin-top: 0; margin-bottom: 20px; color: #334155; font-size: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">Select Payment Method</h4>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <label style="display: flex; align-items: center; padding: 15px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+            <input type="radio" name="payMethod" value="upi" checked style="margin-right: 15px; transform: scale(1.2); accent-color: #3399cc;">
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-weight: 600; color: #0f172a; font-size: 1rem;">UPI / QR</span>
+              <span style="font-size: 0.85rem; color: #64748b;">Google Pay, PhonePe, Paytm & more</span>
+            </div>
+            <i class="fa-brands fa-google-pay" style="margin-left: auto; font-size: 1.5rem; color: #5f6368;"></i>
+          </label>
+          <label style="display: flex; align-items: center; padding: 15px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+            <input type="radio" name="payMethod" value="card" style="margin-right: 15px; transform: scale(1.2); accent-color: #3399cc;">
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-weight: 600; color: #0f172a; font-size: 1rem;">Card</span>
+              <span style="font-size: 0.85rem; color: #64748b;">Visa, MasterCard, RuPay & more</span>
+            </div>
+            <i class="fa-regular fa-credit-card" style="margin-left: auto; font-size: 1.2rem; color: #5f6368;"></i>
+          </label>
+          <label style="display: flex; align-items: center; padding: 15px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+            <input type="radio" name="payMethod" value="netbanking" style="margin-right: 15px; transform: scale(1.2); accent-color: #3399cc;">
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-weight: 600; color: #0f172a; font-size: 1rem;">Netbanking</span>
+              <span style="font-size: 0.85rem; color: #64748b;">All Indian banks</span>
+            </div>
+            <i class="fa-solid fa-building-columns" style="margin-left: auto; font-size: 1.2rem; color: #5f6368;"></i>
+          </label>
+        </div>
+        <button type="button" style="width: 100%; margin-top: 25px; background: #3399cc; color: #fff; padding: 16px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 1.05rem; box-shadow: 0 4px 12px rgba(51, 153, 204, 0.3); transition: background 0.2s;" onclick="processPayment()" onmouseover="this.style.background='#2780ab'" onmouseout="this.style.background='#3399cc'">Pay Now</button>
+        <div style="text-align: center; margin-top: 20px;">
+           <button type="button" class="close-modal-btn" onclick="closeModal('paymentModal')" style="font-size: 0.9rem; color: #94a3b8; text-decoration: underline;">Cancel Payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card" style="text-align: center; padding: 40px 30px; margin: auto; max-width: 450px;">
+      <div style="width: 80px; height: 80px; background: #10b981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 20px auto; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2 style="margin-bottom: 10px; color: #0f172a; font-family: var(--font-display);">Payment Successful!</h2>
+      <p style="color: #64748b; margin-bottom: 25px; font-size: 1rem; line-height: 1.5;">Your booking has been confirmed. A receipt has been sent to your registered mobile and email.</p>
+      <button type="button" style="background: var(--color-brand-blue); color: #fff; padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 1rem; width: 100%;" onclick="closeModal('successModal')">Done</button>
+    </div>
+  </div>
+
+  <div class="toast-notification" id="toastNotice">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Welcome to Karimnagar Club!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

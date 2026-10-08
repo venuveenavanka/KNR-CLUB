@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karimnagar Club - Admin Analytics & Bookings Dashboard</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6.5.1 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Admin Layout Wrapper -->
+  <div class="admin-wrapper">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-brand">
+          <div class="logo-icon-wrapper">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <div class="brand-text-box">
+            <span class="brand-title">Karimnagar Club</span>
+            <span class="brand-sub">Admin Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="sidebar-link active" data-admin-page="overview">
+          <i class="fa-solid fa-chart-line"></i> <span>Dashboard Overview</span>
+        </a>
+        <a href="#rooms-manage" class="sidebar-link" data-admin-page="rooms">
+          <i class="fa-solid fa-door-open"></i> <span>Rooms & Suites</span>
+        </a>
+        <a href="#sports-manage" class="sidebar-link" data-admin-page="sports">
+          <i class="fa-solid fa-trophy"></i> <span>Sports Facilities</span>
+        </a>
+        <a href="#bookings" class="sidebar-link" data-admin-page="bookings">
+          <i class="fa-solid fa-calendar-check"></i> <span>Bookings & Guests</span>
+        </a>
+        <a href="#payments" class="sidebar-link" data-admin-page="payments">
+          <i class="fa-solid fa-credit-card"></i> <span>Payments & Revenue</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="../index.html" class="back-to-site-btn">
+          <i class="fa-solid fa-arrow-left"></i> <span>Main Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Body -->
+    <main class="admin-main-content">
+      
+      <!-- Top Admin Header Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Analytics & Operations Dashboard</h1>
+          <p class="page-subtitle">Welcome back, Administrator. Overview of room bookings, sports arenas & payments in Indian Rupees (₹).</p>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Live Date Badge -->
+          <div class="live-date-badge">
+            <i class="fa-solid fa-clock"></i> <span id="currentDateDisplay">Oct 6, 2026</span>
+          </div>
+          <!-- Admin User Profile -->
+          <div class="admin-profile-pill">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Admin Avatar" class="profile-avatar">
+            <div class="profile-info">
+              <span class="profile-name">Srinivas Manager</span>
+              <span class="profile-role">Super Admin</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="page-overview" class="admin-page active-page">
+      <!-- 1. ANALYTICS METRICS CARDS GRID -->
+      <section class="analytics-metrics-grid">
+        
+        <!-- Card 1: Booked Rooms -->
+        <div class="metric-card metric-booked">
+          <div class="metric-header">
+            <div class="metric-icon-box blue-icon">
+              <i class="fa-solid fa-door-open"></i>
+            </div>
+            <span class="metric-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +14%</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Booked Rooms</span>
+            <h2 class="metric-value">18 <span class="metric-total">/ 30 Rooms</span></h2>
+            <div class="metric-progress-bar">
+              <div class="progress-fill blue-fill" style="width: 60%;"></div>
+            </div>
+            <span class="metric-subtext">60% Total Occupancy Rate</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Available Rooms -->
+        <div class="metric-card metric-available">
+          <div class="metric-header">
+            <div class="metric-icon-box green-icon">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <span class="metric-trend neutral">Ready to Book</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Available Rooms</span>
+            <h2 class="metric-value">12 <span class="metric-total">Vacant</span></h2>
+            <div class="metric-progress-bar">
+              <div class="progress-fill green-fill" style="width: 40%;"></div>
+            </div>
+            <span class="metric-subtext">40% Vacancy Ready for Check-in</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Active Sports Facilities -->
+        <div class="metric-card metric-sports">
+          <div class="metric-header">
+            <div class="metric-icon-box amber-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <span class="metric-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> High Demand</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Sports Facilities</span>
+            <h2 class="metric-value">6 <span class="metric-total">Arenas Active</span></h2>
+            <div class="metric-progress-bar">
+              <div class="progress-fill amber-fill" style="width: 85%;"></div>
+            </div>
+            <span class="metric-subtext">42 Active Sports Members Today</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Payments & Revenue (Indian Rupees ₹) -->
+        <div class="metric-card metric-payments">
+          <div class="metric-header">
+            <div class="metric-icon-box purple-icon">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+            <span class="metric-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4%</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-label">Total Revenue / Payments</span>
+            <h2 class="metric-value">₹4,28,500</h2>
+            <div class="metric-progress-bar">
+              <div class="progress-fill purple-fill" style="width: 78%;"></div>
+            </div>
+            <span class="metric-subtext">Received this month</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 2. BOOKINGS & ROOM NUMBERS MANAGEMENT TABLE -->
+      <section class="table-section-card">
+        
+        <div class="table-header-bar">
+          <div class="table-title-box">
+            <h3 class="table-title"><i class="fa-solid fa-list-check"></i> Recent Room Bookings & Status</h3>
+            <span class="table-subtitle">Displaying detailed bookings with room numbers for easy identification</span>
+          </div>
+
+          <!-- Table Controls & Search Bar -->
+          <div class="table-actions-box">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="adminSearchInput" placeholder="Search Guest Name or Room #..." class="admin-search-input">
+            </div>
+
+            <div class="filter-dropdown-wrapper">
+              <select id="statusFilterSelect" class="status-select-input">
+                <option value="all">All Bookings</option>
+                <option value="booked">Booked Rooms</option>
+                <option value="available">Available Rooms</option>
+                <option value="paid">Paid</option>
+                <option value="pending">Pending</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Table Container -->
+        <div class="table-responsive-wrapper">
+          <table class="admin-data-table" id="bookingsTable">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Guest / Member</th>
+                <th>Room Number</th>
+                <th>Room Type / Suite</th>
+                <th>Check-in / Out</th>
+                <th>Payment Status</th>
+                <th>Amount (₹)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <!-- Row 1 -->
+              <tr data-status="booked paid" data-room="#101">
+                <td class="booking-id">#KC-1082</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Guest" class="guest-avatar">
+                    <div>
+                      <strong class="guest-name">Eleanor Vance</strong>
+                      <span class="guest-email">eleanor@example.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill primary-pill"><i class="fa-solid fa-door-closed"></i> Room #101</span>
+                </td>
+                <td>Presidential Ocean Suite</td>
+                <td>Oct 12 — Oct 18</td>
+                <td><span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                <td class="amount-text">₹27,000</td>
+                <td>
+                  <button class="action-btn btn-view" onclick="showBookingDetails('#KC-1082', 'Eleanor Vance', 'Room #101', '₹27,000')">Manage</button>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr data-status="booked paid" data-room="#204">
+                <td class="booking-id">#KC-1083</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Guest" class="guest-avatar">
+                    <div>
+                      <strong class="guest-name">Alexander Wright</strong>
+                      <span class="guest-email">alex.w@example.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill purple-pill"><i class="fa-solid fa-door-closed"></i> Villa #204</span>
+                </td>
+                <td>Deluxe Private Pool Villa</td>
+                <td>Oct 15 — Oct 22</td>
+                <td><span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                <td class="amount-text">₹33,600</td>
+                <td>
+                  <button class="action-btn btn-view" onclick="showBookingDetails('#KC-1083', 'Alexander Wright', 'Villa #204', '₹33,600')">Manage</button>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr data-status="booked pending" data-room="#305">
+                <td class="booking-id">#KC-1084</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80" alt="Guest" class="guest-avatar">
+                    <div>
+                      <strong class="guest-name">Sophia Martinez</strong>
+                      <span class="guest-email">sophia.m@example.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill green-pill"><i class="fa-solid fa-door-closed"></i> Suite #305</span>
+                </td>
+                <td>Executive Golf View Suite</td>
+                <td>Oct 18 — Oct 21</td>
+                <td><span class="status-badge status-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                <td class="amount-text">₹11,400</td>
+                <td>
+                  <button class="action-btn btn-view" onclick="showBookingDetails('#KC-1084', 'Sophia Martinez', 'Suite #305', '₹11,400')">Manage</button>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr data-status="booked paid" data-room="#501">
+                <td class="booking-id">#KC-1085</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80" alt="Guest" class="guest-avatar">
+                    <div>
+                      <strong class="guest-name">David Sterling</strong>
+                      <span class="guest-email">david.s@example.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill amber-pill"><i class="fa-solid fa-door-closed"></i> Penthouse #501</span>
+                </td>
+                <td>Royal Penthouse Suite</td>
+                <td>Oct 20 — Oct 27</td>
+                <td><span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                <td class="amount-text">₹34,300</td>
+                <td>
+                  <button class="action-btn btn-view" onclick="showBookingDetails('#KC-1085', 'David Sterling', 'Penthouse #501', '₹34,300')">Manage</button>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr data-status="available" data-room="#108">
+                <td class="booking-id">#KC-1086</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <span class="vacant-tag"><i class="fa-solid fa-circle"></i> Ready for Check-in</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill green-pill"><i class="fa-solid fa-door-closed"></i> Cottage #108</span>
+                </td>
+                <td>Oceanfront Cottage</td>
+                <td>Vacant</td>
+                <td><span class="status-badge status-available"><i class="fa-solid fa-key"></i> Available</span></td>
+                <td class="amount-text">₹3,900 / night</td>
+                <td>
+                  <button class="action-btn btn-assign" onclick="assignGuest('Cottage #108')">Assign</button>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr data-status="available" data-room="#112">
+                <td class="booking-id">#KC-1087</td>
+                <td>
+                  <div class="guest-info-cell">
+                    <span class="vacant-tag"><i class="fa-solid fa-circle"></i> Ready for Check-in</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="room-number-pill primary-pill"><i class="fa-solid fa-door-closed"></i> Chalet #112</span>
+                </td>
+                <td>Luxury Garden Chalet</td>
+                <td>Vacant</td>
+                <td><span class="status-badge status-available"><i class="fa-solid fa-key"></i> Available</span></td>
+                <td class="amount-text">₹3,500 / night</td>
+                <td>
+                  <button class="action-btn btn-assign" onclick="assignGuest('Chalet #112')">Assign</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+      </div> <!-- /page-overview -->
+
+      <!-- ROOMS & SUITES TAB -->
+      <div id="page-rooms" class="admin-page" style="display: none;">
+        <div class="table-section-card">
+          <div class="table-header-bar" style="margin-bottom: 25px;">
+            <div class="table-title-box">
+              <h3 class="table-title"><i class="fa-solid fa-door-open"></i> Manage Rooms & Suites Status</h3>
+              <span class="table-subtitle">Update room availability for direct and manual bookings</span>
+            </div>
+          </div>
+          <div class="rooms-admin-grid">
+            
+            <div class="room-admin-card" id="room-card-101">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill primary-pill"><i class="fa-solid fa-door-closed"></i> #101</span>
+                <span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Booked</span>
+              </div>
+              <h4 class="room-title">Presidential Suite</h4>
+              <button class="btn-toggle-status btn-mark-vacant" onclick="toggleRoomStatus('101', 'vacant')">Mark as Vacant</button>
+            </div>
+
+            <div class="room-admin-card" id="room-card-204">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill purple-pill"><i class="fa-solid fa-door-closed"></i> #204</span>
+                <span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Booked</span>
+              </div>
+              <h4 class="room-title">Deluxe Pool Villa</h4>
+              <button class="btn-toggle-status btn-mark-vacant" onclick="toggleRoomStatus('204', 'vacant')">Mark as Vacant</button>
+            </div>
+
+            <div class="room-admin-card" id="room-card-305">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill green-pill"><i class="fa-solid fa-door-closed"></i> #305</span>
+                <span class="status-badge status-pending"><i class="fa-solid fa-clock"></i> Booked</span>
+              </div>
+              <h4 class="room-title">Executive Golf Suite</h4>
+              <button class="btn-toggle-status btn-mark-vacant" onclick="toggleRoomStatus('305', 'vacant')">Mark as Vacant</button>
+            </div>
+
+            <div class="room-admin-card" id="room-card-501">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill amber-pill"><i class="fa-solid fa-door-closed"></i> #501</span>
+                <span class="status-badge status-paid"><i class="fa-solid fa-circle-check"></i> Booked</span>
+              </div>
+              <h4 class="room-title">Royal Penthouse</h4>
+              <button class="btn-toggle-status btn-mark-vacant" onclick="toggleRoomStatus('501', 'vacant')">Mark as Vacant</button>
+            </div>
+
+            <div class="room-admin-card" id="room-card-108">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill green-pill"><i class="fa-solid fa-door-closed"></i> #108</span>
+                <span class="status-badge status-available"><i class="fa-solid fa-key"></i> Vacant</span>
+              </div>
+              <h4 class="room-title">Oceanfront Cottage</h4>
+              <button class="btn-toggle-status btn-mark-booked" onclick="toggleRoomStatus('108', 'booked')">Mark as Booked</button>
+            </div>
+
+            <div class="room-admin-card" id="room-card-112">
+              <div class="room-admin-card-header">
+                <span class="room-number-pill primary-pill"><i class="fa-solid fa-door-closed"></i> #112</span>
+                <span class="status-badge status-available"><i class="fa-solid fa-key"></i> Vacant</span>
+              </div>
+              <h4 class="room-title">Luxury Garden Chalet</h4>
+              <button class="btn-toggle-status btn-mark-booked" onclick="toggleRoomStatus('112', 'booked')">Mark as Booked</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <div class="toast-notification" id="toastNotice">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Admin panel loaded successfully!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
