@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Karimnagar Club - Complete Stylesheet with Room Numbers Tag & Admin Link
    ========================================================================== */
 
@@ -687,12 +687,12 @@ body {
 }
 
 .tab-content-section {
-  display: none;
+  display: block;
+  margin-bottom: 60px;
 }
 
 .tab-content-section.active-section {
   display: block;
-  animation: fadeInTab 0.4s ease-out forwards;
 }
 
 @keyframes fadeInTab {
@@ -1309,6 +1309,15 @@ body {
   color: #94a3b8;
   margin-top: 64px;
   padding-top: 50px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
 }
 
 .footer-container {

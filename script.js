@@ -1,18 +1,12 @@
-﻿/**
+/**
  * Karimnagar Club - Dynamic Single-Tab Display & Interactivity Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- 1. Dynamic Single Tab Switcher ---
-  window.switchTab = function(tabName) {
-    const allSections = document.querySelectorAll('.tab-content-section');
-    allSections.forEach(sec => sec.classList.remove('active-section'));
-
+  window.switchTab = function(tabName, shouldScroll = true) {
     const targetSection = document.getElementById(`section-${tabName}`);
-    if (targetSection) {
-      targetSection.classList.add('active-section');
-    }
 
     const heroTabs = document.querySelectorAll('.search-tab-btn');
     heroTabs.forEach(btn => {
@@ -43,10 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (locationInput && tabPlaceholders[tabName]) {
       locationInput.placeholder = tabPlaceholders[tabName];
     }
+    
+    // Update sub-category filters
+    const subFilters = document.getElementById('subCategoryFilters');
+    if (subFilters) {
+      if (tabName === 'rooms') {
+        subFilters.innerHTML = `
+          <button class="sub-filter-btn active" data-filter="all">All Categories</button>
+          <button class="sub-filter-btn" data-filter="vip">VIP Suites</button>
+          <button class="sub-filter-btn" data-filter="villas">Pool Villas</button>
+        `;
+      } else if (tabName === 'sports') {
+        subFilters.innerHTML = `
+          <button class="sub-filter-btn active" data-filter="all">All Sports</button>
+          <button class="sub-filter-btn" data-filter="tennis">Tennis</button>
+          <button class="sub-filter-btn" data-filter="golf">Golf</button>
+        `;
+      }
+    }
 
-    const wrapper = document.querySelector('.tab-content-wrapper');
-    if (wrapper) {
-      wrapper.scrollIntoView({ behavior: 'smooth' });
+    if (shouldScroll && targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -54,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   searchTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const tab = btn.getAttribute('data-tab');
-      if (tab) switchTab(tab);
+      if (tab) switchTab(tab, false); // pass false to prevent scroll
     });
   });
 
