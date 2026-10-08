@@ -5,7 +5,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- 1. Dynamic Single Tab Switcher ---
+  window.currentSearchTab = 'rooms';
+
   window.switchTab = function(tabName, shouldScroll = true) {
+    window.currentSearchTab = tabName;
     const targetSection = document.getElementById(`section-${tabName}`);
 
     const heroTabs = document.querySelectorAll('.search-tab-btn');
@@ -54,6 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <button class="sub-filter-btn" data-filter="golf">Golf</button>
         `;
       }
+    }
+
+    // Update Guests Label
+    const guestsLabel = document.querySelector('.guests-col .input-label');
+    if (guestsLabel) {
+      guestsLabel.textContent = tabName === 'rooms' ? 'Guests' : 'Players';
+    }
+
+    // Call updateGuestDisplay if it is defined yet
+    if (typeof window.updateGuestDisplay === 'function') {
+      window.updateGuestDisplay();
     }
 
     if (shouldScroll && targetSection) {
@@ -174,22 +188,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function updateGuestDisplay() {
+  window.updateGuestDisplay = function() {
     if (adultValSpan) adultValSpan.textContent = adultCount;
     if (childValSpan) childValSpan.textContent = childCount;
 
     const totalGuests = adultCount + childCount;
-    const roomCount = Math.ceil(totalGuests / 2) || 1;
     
     if (guestsDisplayText) {
-      guestsDisplayText.textContent = `${totalGuests} Guest${totalGuests > 1 ? 's' : ''}, ${roomCount} Room${roomCount > 1 ? 's' : ''}`;
+      if (window.currentSearchTab === 'rooms') {
+        const roomCount = Math.ceil(totalGuests / 2) || 1;
+        guestsDisplayText.textContent = `${totalGuests} Guest${totalGuests > 1 ? 's' : ''}, ${roomCount} Room${roomCount > 1 ? 's' : ''}`;
+      } else {
+        const courtCount = Math.ceil(totalGuests / 4) || 1;
+        guestsDisplayText.textContent = `${totalGuests} Player${totalGuests > 1 ? 's' : ''}, ${courtCount} Court${courtCount > 1 ? 's' : ''}`;
+      }
     }
   }
 
-  if (adultPlus) adultPlus.addEventListener('click', () => { adultCount++; updateGuestDisplay(); });
-  if (adultMinus) adultMinus.addEventListener('click', () => { if (adultCount > 1) { adultCount--; updateGuestDisplay(); } });
-  if (childPlus) childPlus.addEventListener('click', () => { childCount++; updateGuestDisplay(); });
-  if (childMinus) childMinus.addEventListener('click', () => { if (childCount > 0) { childCount--; updateGuestDisplay(); } });
+  if (adultPlus) adultPlus.addEventListener('click', () => { adultCount++; window.updateGuestDisplay(); });
+  if (adultMinus) adultMinus.addEventListener('click', () => { if (adultCount > 1) { adultCount--; window.updateGuestDisplay(); } });
+  if (childPlus) childPlus.addEventListener('click', () => { childCount++; window.updateGuestDisplay(); });
+  if (childMinus) childMinus.addEventListener('click', () => { if (childCount > 0) { childCount--; window.updateGuestDisplay(); } });
 
   // --- 6. Wishlist Button Toggle ---
   const wishlistBtns = document.querySelectorAll('.wishlist-btn');
